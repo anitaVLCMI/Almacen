@@ -22,7 +22,10 @@ public class Mueble extends Producto {
     @Override
     public String imprimirProducto() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MMMM/yy");
-        String res = super.imprimirProducto() + "el año de fabricación: " + sdf.format(anyoFab) + " el tipo de madera: " + this.tipoMadera + "el estilo: " + getEstilo();
+        
+        String format="%s El año de Fabricsacion: %s Tipo de madera: %s El estilo: %s";
+        String res=String.format(format,super.imprimirProducto(),sdf.format(anyoFab),this.tipoMadera,getEstilo());
+//        String res = super.imprimirProducto() + "el año de fabricación: " + sdf.format(anyoFab) + " el tipo de madera: " + this.tipoMadera + "el estilo: " + getEstilo();
         return res;
 
     }

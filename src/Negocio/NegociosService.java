@@ -256,13 +256,18 @@ public class NegociosService {
             for (Cliente c : clientes) {
 
                 if (c instanceof Mayorista) {
+                    
                     Mayorista m = (Mayorista) c;
-                    res += "\n ID NOMBRE  RAZON SOCIAL  CIF   TIPO  DESCUENTO" + "\n" + m.getIdCliente() + "   " + m.getNombre() + "   " + m.getRazonSocial() + "   " + m.getCif() + "   " + m.getTipoMayorista() + "   " + m.getDescuento();
+                    String format=" \n ID: %s Nombre %s Razon Social: %s Cif: %s Tipo: %s Descuento: %s ";
+                    res=String.format(format,m.getIdCliente(),m.getNombre(),m.getRazonSocial(),m.getCif(),m.getTipoMayorista(),m.getDescuento());
+//                    res += "\n ID NOMBRE  RAZON SOCIAL  CIF   TIPO  DESCUENTO" + "\n" + m.getIdCliente() + "   " + m.getNombre() + "   " + m.getRazonSocial() + "   " + m.getCif() + "   " + m.getTipoMayorista() + "   " + m.getDescuento();
 
                 }
                 if (c instanceof Particular) {
                     Particular p = (Particular) c;
-                    res += "\n ID NOMBRE  RAZON SOCIAL  DNI" + "\n" + p.getIdCliente() + "   " + p.getNombre() + "      " + p.getRazonSocial() + "   " + p.getDni();
+                    String format=" \n ID: %s Nombre %s Razon Social: %s Dni: %s ";
+                    res=String.format(format,p.getIdCliente(),p.getNombre(),p.getRazonSocial(),p.getDni());
+//                    res += "\n ID NOMBRE  RAZON SOCIAL  DNI" + "\n" + p.getIdCliente() + "   " + p.getNombre() + "      " + p.getRazonSocial() + "   " + p.getDni();
 
                 }
             }
@@ -277,7 +282,9 @@ public class NegociosService {
 
         } else {
             for (Venta v : ventas) {
-                res += "\n ID VENTA VENDEDOR  CLIENTE PRODUCTO PRECIO VENTA" + "\n" + v.getIdVenta() + "   " + v.getVendedor() + "   " + v.getCliente().getIdCliente() + "  " + v.getProducto().getId() + "   " + v.getPrecioVenta();
+                 String format=" \n ID Venta: %s Vendedor: %s Cliente: %s Producto: %s Precio Venta: %s ";
+                    res=String.format(format,v.getIdVenta(),v.getVendedor(),v.getCliente().getIdCliente(),v.getProducto().getId(),v.getPrecioVenta());
+//                res += "\n ID VENTA VENDEDOR  CLIENTE PRODUCTO PRECIO VENTA" + "\n" + v.getIdVenta() + "   " + v.getVendedor() + "   " + v.getCliente().getIdCliente() + "  " + v.getProducto().getId() + "   " + v.getPrecioVenta();
 
             }
         }

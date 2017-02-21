@@ -33,7 +33,9 @@ public class Lavadora extends Electrodomestico {
     
     @Override
     public String imprimirProducto(){
-        String res = super.imprimirProducto() + "de revoluciones: "+this.revoluciones+ "con carga: "+this.carga;
+        String format=" %s de revoluciones: %s con carga: %s";
+        String res=String.format(format,super.imprimirProducto(),this.revoluciones,this.carga);
+//        String res = super.imprimirProducto() + "de revoluciones: "+this.revoluciones+ "con carga: "+this.carga;
         return res;
     }
     

@@ -36,7 +36,9 @@ public  abstract class Electrodomestico extends Producto {
     }
     @Override
     public String  imprimirProducto(){
-        String res = super.imprimirProducto() + " de marca: "+this.getMarca() + " de tamaño: "+this.tamanyo+ " fabricado por: "+this.getFabricante();
+        String format=" %s de marca: %s de tamaño: %s fabricado por: %s ";
+        String res=String.format(format,super.imprimirProducto(),this.getMarca(),this.tamanyo ,this.getFabricante());
+//        String res = super.imprimirProducto() + " de marca: "+this.getMarca() + " de tamaño: "+this.tamanyo+ " fabricado por: "+this.getFabricante();
         return res;
     }
     

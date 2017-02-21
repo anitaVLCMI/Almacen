@@ -14,7 +14,10 @@ public class Particular extends Cliente {
 
     @Override
     public String imprimir() {
-        String res = super.imprimir() + " DNI: " + this.dni;
+        String res="";
+        String format=" %s Dni: %s";
+        res=String.format(format,super.imprimir(),this.dni);
+//        String res = super.imprimir() + " DNI: " + this.dni;
         return res;
     }
 

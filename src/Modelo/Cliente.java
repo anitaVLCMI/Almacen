@@ -51,8 +51,10 @@ public abstract class Cliente {
     }
    
    public String imprimir(){
+       String format=" ID %s Nombre: %s Razon Social: %s";
+       String res=String.format(format,+this.idCliente,this.nombre,this.razonSocial);
        //id, nombre, razon social
-      String res = "ID: "+this.idCliente+ " nombre: "+this.nombre+" razón social: "+this.razonSocial;
+//      String res = "ID: "+this.idCliente+ " nombre: "+this.nombre+" razón social: "+this.razonSocial;
       return res;
        
    }

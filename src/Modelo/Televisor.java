@@ -24,7 +24,10 @@ public class Televisor extends Electrodomestico {
 
     @Override
     public String imprimirProducto() {
-        String res = super.imprimirProducto() + "tipo de TV: " + this.tipo + "con " + this.pulgadas + " pulgadas";
+        String res;
+        String format="%s Tipo de tv: %s con %s Pulgadas";
+        res=String.format(format,super.imprimirProducto(),this.tipo,this.pulgadas);
+//        String res = super.imprimirProducto() + "tipo de TV: " + this.tipo + "con " + this.pulgadas + " pulgadas";
         return res;
 
     }

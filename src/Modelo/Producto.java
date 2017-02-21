@@ -58,7 +58,9 @@ public abstract  class Producto {
     
     
     public static String imprimirNumProductos(){
-        String res = "El número de productos es: "+contador;
+        String format=" El numero de productor es: %s";
+        String res=String.format(format, contador);
+//        String res = "El número de productos es: "+contador;
         return res;
     }
 
